@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="welcome">A game by Eveagle Studios</div>
+    <h1>Math Game</h1>
+    <div id="score"></div>
+    <div id="finalScore"></div>
+    <button id="startButton">Start Game</button>
+    <button id="quitButton" style="display: none;">Quit</button>
+
+    <div id="operation">
+        <h2>Select Operation</h2>
+        <button onclick="game.setOperation('+')">Addition</button>
+        <button onclick="game.setOperation('-')">Subtraction</button>
+        <button onclick="game.setOperation('×')">Multiplication</button>
+        <button onclick="game.setOperation('÷')">Division</button>
+    </div>
+
+    <div id="difficulty">
+        <h2>Select Difficulty</h2>
+        <button onclick="game.setDifficulty('easy')">Easy</button>
+        <button onclick="game.setDifficulty('medium')">Medium</button>
+        <button onclick="game.setDifficulty('hard')">Hard</button>
+    </div>
+
+    <div id="timeInput" style="display: none;">
+        <h2>Set Time (seconds)</h2>
+        <input type="number" id="totalTime" min="10" max="300" value="60">
+        <button onclick="game.startQuestions()">Start</button>
+    </div>
+
+    <div id="timer">Time Left: <span id="timeLeftDisplay">60</span>s</div>
+    <div id="question"></div>
+    <div id="options"></div>
+
+    <script src="js/utils/mathUtils.js" type="module"></script>
+    <script src="js/utils/difficultyManager.js" type="module"></script>
+    <script src="js/components/optionsGenerator.js" type="module"></script>
+    <script src="js/components/timer.js" type="module"></script>
+    <script src="js/components/scoreManager.js" type="module"></script>
+    <script src="sounds.js"></script>
+    <script src="animations.js"></script>
+    <script src="js/game.js" type="module"></script>
+</body>
+</html>

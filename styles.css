@@ -1,0 +1,116 @@
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Components */
+#welcome {
+    font-size: 2em;
+    animation: fadeIn 2s forwards;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#score {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    display: none;
+    animation: slideIn 0.5s ease-out;
+}
+
+#finalScore {
+    font-size: 1.8em;
+    color: #333;
+    margin-top: 20px;
+    display: none;
+    animation: fadeIn 1s ease-out;
+}
+
+.correct-answer {
+    animation: pulse 0.5s ease-out;
+}
+
+.wrong-answer {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Buttons and Inputs */
+button {
+    background-color: #ccc;
+    color: #333;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #bbb;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+button:active {
+    transform: scale(0.95);
+    background-color: #aaa;
+}
+
+/* Game sections */
+#question, #options, #timer, #operation, #difficulty {
+    margin: 20px;
+    display: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+}
