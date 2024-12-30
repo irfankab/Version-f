@@ -40,13 +40,12 @@
     <div id="question"></div>
     <div id="options"></div>
 
-    <script src="js/utils/mathUtils.js" type="module"></script>
-    <script src="js/utils/difficultyManager.js" type="module"></script>
-    <script src="js/components/optionsGenerator.js" type="module"></script>
-    <script src="js/components/timer.js" type="module"></script>
-    <script src="js/components/scoreManager.js" type="module"></script>
-    <script src="sounds.js"></script>
+    <!-- Load scripts in correct order -->
+    <script src="config.js"></script>
     <script src="animations.js"></script>
-    <script src="js/game.js" type="module"></script>
+    <script src="sounds.js"></script>
+    <script src="utils.js"></script>
+    <script src="ui.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
